@@ -1,4 +1,4 @@
-package expense
+package filesystem
 
 import (
 	"encoding/json"
@@ -75,16 +75,15 @@ func openFile(pathLocation string) (*os.File, error) {
 func WriteFile(data []entities.Expense) (bool, error) {
 	pathLocation := getFilePath()
 
-	/* open file */
-	fileOpened, errOpened := openFile(pathLocation)
-	defer fileOpened.Close()
-	if errOpened != nil {
-		Log.Errorf("Error opening file: %v", errOpened.Error())
-		return false, errOpened
+	/* create file */
+	file, err := os.Create(pathLocation)
+	if err != nil {
+		Log.Errorf("Error create file: %v", err.Error())
+		return false, err
 	}
 
 	/* encode data in file content */
-	errEncoded := json.NewEncoder(fileOpened).Encode(data)
+	errEncoded := json.NewEncoder(file).Encode(&data)
 	if errEncoded != nil {
 		Log.Errorf("Error encoding data to file: %v", errEncoded.Error())
 		return false, errEncoded

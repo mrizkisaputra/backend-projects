@@ -2,14 +2,14 @@ package tests
 
 import (
 	"expense-tracker/cmd/entities"
-	"expense-tracker/internal/expense"
+	"expense-tracker/internal/filesystem"
 	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
 )
 
 func TestReadFile(t *testing.T) {
-	data, err := expense.ReadFile()
+	data, err := filesystem.ReadFile()
 	assert.Nil(t, err)
 	assert.NotNil(t, data)
 }
@@ -21,7 +21,7 @@ func TestWriteFile(t *testing.T) {
 		{Id: 3, Description: "Testing write file", Amount: 40.10, Date: time.Now(), Category: "test"},
 	}
 
-	status, err := expense.WriteFile(data)
+	status, err := filesystem.WriteFile(data)
 	assert.Nil(t, err)
 	assert.True(t, status)
 }
