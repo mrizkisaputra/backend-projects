@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"expense-tracker/cmd/entities"
+	"expense-tracker/cmd/main/entities"
 	"expense-tracker/internal/filesystem"
 	"github.com/stretchr/testify/assert"
 	"testing"

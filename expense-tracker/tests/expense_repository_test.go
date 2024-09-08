@@ -1,8 +1,8 @@
 package tests
 
 import (
-	"expense-tracker/cmd/entities"
-	"expense-tracker/cmd/repositories"
+	"expense-tracker/cmd/main/entities"
+	"expense-tracker/cmd/main/repositories"
 	"expense-tracker/internal/log"
 	"fmt"
 	"github.com/stretchr/testify/assert"

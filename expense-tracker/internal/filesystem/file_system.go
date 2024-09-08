@@ -2,7 +2,7 @@ package filesystem
 
 import (
 	"encoding/json"
-	"expense-tracker/cmd/entities"
+	"expense-tracker/cmd/main/entities"
 	. "expense-tracker/internal/log"
 	"os"
 	"path/filepath"

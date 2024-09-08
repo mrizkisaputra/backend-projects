@@ -1,6 +1,8 @@
 package repositories
 
-import . "expense-tracker/cmd/entities"
+import (
+	. "expense-tracker/cmd/main/entities"
+)
 
 type ExpenseRepositoryInterface interface {
 	Add(expense Expense) (bool, error)

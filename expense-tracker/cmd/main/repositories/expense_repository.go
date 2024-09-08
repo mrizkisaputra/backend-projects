@@ -1,22 +1,27 @@
 package repositories
 
 import (
+	. "expense-tracker/cmd/main/entities"
+	"expense-tracker/internal/exceptions"
 	"expense-tracker/internal/filesystem"
 	"fmt"
 	"github.com/sirupsen/logrus"
-	"strconv"
 	"time"
 )
-import . "expense-tracker/cmd/entities"
+
+var instance ExpenseRepositoryInterface
 
 type expenseRepository struct {
 	log *logrus.Logger
 }
 
 func NewExpenseRepository(log *logrus.Logger) ExpenseRepositoryInterface {
-	return &expenseRepository{
-		log: log,
+	if instance == nil {
+		instance = &expenseRepository{
+			log: log,
+		}
 	}
+	return instance
 }
 
 func (e *expenseRepository) Add(expense Expense) (bool, error) {
@@ -42,6 +47,11 @@ func (e *expenseRepository) GetAll() ([]Expense, error) {
 	if errRead != nil {
 		return nil, errRead
 	}
+
+	if len(data) == 0 {
+		return nil, exceptions.NewErrNotFound("Data expense empty!")
+	}
+
 	return data, nil
 }
 
@@ -52,6 +62,10 @@ func (e *expenseRepository) GetSummary() (float64, error) {
 		return 0, errRead
 	}
 
+	if len(data) == 0 {
+		return 0, exceptions.NewErrNotFound("Data expense empty!")
+	}
+
 	/* ambil amount expense */
 	totalAmount := 0.0
 	for _, item := range data {
@@ -59,10 +73,7 @@ func (e *expenseRepository) GetSummary() (float64, error) {
 		/* jumlahkan amount dari tiap expense */
 		totalAmount += amount
 	}
-
-	totalAmountStr := fmt.Sprintf("%.2f", totalAmount)
-	totalAmountParsed, _ := strconv.ParseFloat(totalAmountStr, 64)
-	return totalAmountParsed, nil
+	return totalAmount, nil
 }
 
 func (e *expenseRepository) GetSummaryByMonthCurrentYear(month string) (float64, error) {
@@ -70,6 +81,10 @@ func (e *expenseRepository) GetSummaryByMonthCurrentYear(month string) (float64,
 	data, errRead := filesystem.ReadFile()
 	if errRead != nil {
 		return 0, errRead
+	}
+
+	if len(data) == 0 {
+		return 0, exceptions.NewErrNotFound("Data expense empty!")
 	}
 
 	/* cari berdasarkan parameter month */
@@ -87,9 +102,7 @@ func (e *expenseRepository) GetSummaryByMonthCurrentYear(month string) (float64,
 		}
 	}
 
-	totalAmountStr := fmt.Sprintf("%.2f", totalAmount)
-	totalAmountParsed, _ := strconv.ParseFloat(totalAmountStr, 64)
-	return totalAmountParsed, nil
+	return totalAmount, nil
 }
 
 func (e *expenseRepository) Delete(id int) (bool, error) {
@@ -97,6 +110,10 @@ func (e *expenseRepository) Delete(id int) (bool, error) {
 	data, errRead := filesystem.ReadFile()
 	if errRead != nil {
 		return false, errRead
+	}
+
+	if len(data) == 0 {
+		return false, exceptions.NewErrNotFound("Data expense empty!")
 	}
 
 	/* cari data expense berdasarkan parameter id */
@@ -111,7 +128,7 @@ func (e *expenseRepository) Delete(id int) (bool, error) {
 	}
 
 	if !isExist {
-		return isExist, nil
+		return isExist, exceptions.NewErrNotFound(fmt.Sprintf("Data with ID %d not found!", id))
 	}
 
 	/* setelah dihapus, tulis ulang */
@@ -127,6 +144,10 @@ func (e *expenseRepository) Update(id int, newDescription string, newAmount floa
 	data, errRead := filesystem.ReadFile()
 	if errRead != nil {
 		return false, errRead
+	}
+
+	if len(data) == 0 {
+		return false, exceptions.NewErrNotFound("Data expense empty!")
 	}
 
 	/* cari data expense berdasarkan id expense yang ingin diubah */
@@ -163,7 +184,7 @@ func (e *expenseRepository) Update(id int, newDescription string, newAmount floa
 	}
 
 	if !isExist {
-		return isExist, nil
+		return isExist, exceptions.NewErrNotFound(fmt.Sprintf("Data with ID %d not found!", id))
 	}
 
 	/* seletelah diubah, tulis ulang */
@@ -181,12 +202,22 @@ func (e *expenseRepository) GetByCategory(category string) ([]Expense, error) {
 		return nil, errRead
 	}
 
+	if len(data) == 0 {
+		return nil, exceptions.NewErrNotFound("Data expense empty!")
+	}
+
 	/* cari data expense berdasarkan parameter category */
 	var listCategories []Expense
+	var exist bool
 	for _, item := range data {
 		if item.Category == category {
+			exist = true
 			listCategories = append(listCategories, item)
 		}
+	}
+
+	if !exist {
+		return nil, exceptions.NewErrNotFound(fmt.Sprintf("list of category %s not found", category))
 	}
 
 	/* return list category */
