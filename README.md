@@ -7,7 +7,9 @@ The projects are organized by difficulty level, ranging from beginner to interme
   sample solution for the [task tracker](https://roadmap.sh/projects/task-tracker) challenge from [roadmap.sh](https://roadmap.sh/)
 - [Github User Activity](https://github.com/mrizkisaputra/backend-projects/tree/master/github-user-activity) - CLI  
   sample solution for the [github user activity](https://roadmap.sh/projects/github-user-activity) challenge from [roadmap.sh](https://roadmap.sh/)
-- Expense Tracker - (coming soon)
+- [Expense Tracker](https://github.com/mrizkisaputra/backend-projects/tree/master/expense-tracker) - CLI  
+  sample solution for the [expense tracker](https://roadmap.sh/projects/expense-tracker) challenge from [roadmap.sh](https://roadmap.sh/)
+  
 - Number Guessing Game (coming soon) 🎉
 - Unit Converter (coming soon) 🎉
 - Personal Blog Game (coming soon) 🎉
