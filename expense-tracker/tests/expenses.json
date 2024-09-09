@@ -1,0 +1,30 @@
+[
+  {
+    "id": 3,
+    "description": "Launch3",
+    "amount": 30.10,
+    "date": "2024-09-07T00:00:00Z",
+    "category": "food"
+  },
+  {
+    "id": 2,
+    "description": "Launch2",
+    "amount": 200.12,
+    "date": "2024-09-07T00:00:00Z",
+    "category": "food"
+  },
+  {
+    "id": 1,
+    "description": "Launch1",
+    "amount": 10.08,
+    "date": "2024-09-07T00:00:00Z",
+    "category": "food"
+  },
+  {
+    "id": 4,
+    "description": "shop",
+    "amount": 10.08,
+    "date": "2024-09-07T00:00:00Z",
+    "category": "shopping"
+  }
+]
