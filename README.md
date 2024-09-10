@@ -10,7 +10,8 @@ The projects are organized by difficulty level, ranging from beginner to interme
 - [Expense Tracker](https://github.com/mrizkisaputra/backend-projects/tree/master/expense-tracker) - CLI  
   sample solution for the [expense tracker](https://roadmap.sh/projects/expense-tracker) challenge from [roadmap.sh](https://roadmap.sh/)
   
-- Number Guessing Game (coming soon) 🎉
+- [Number Guessing Game](https://github.com/mrizkisaputra/backend-projects/tree/master/number-guessing-game) - CLI  
+  sample solution for the [number guessing game](https://roadmap.sh/projects/number-guessing-game) challenge from [roadmap.sh](https://roadmap.sh/)
 - Unit Converter (coming soon) 🎉
 - Personal Blog Game (coming soon) 🎉
 - Blogging Platform API (coming soon) 🎉
