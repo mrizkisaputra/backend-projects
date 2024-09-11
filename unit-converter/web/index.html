@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UnitConverter</title>
+    <!--    start google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!--   end google font-->
+    <link href="/static/assets/css/output.css" rel="stylesheet"/>
+</head>
+<body class="font-inter">
+
+    <!-- start header -->
+    <header class="bg-gradient-to-r from-primary to-secondary text-on-primary text-5xl">
+        <div class="container min-w-96 mx-auto font-extrabold py-4 px-4">UnitConverter</div>
+    </header>
+    <!-- end header -->
+
+    <!-- start main -->
+    <main class="container mx-auto mt-8 px-4">
+        <menu class="flex mb-10">
+            <button id="btn-length" class="tab-button px-6 text-xl py-2 active">Length</button>
+            <button id="btn-weight" class="tab-button px-6 text-xl py-2">Weight</button>
+            <button id="btn-temperature" class="tab-button px-6 text-xl py-2">Temperature</button>
+        </menu>
+
+        <!-- start form converter -->
+        <div id="container-form-converter" class="max-w-xl sm:max-w-4xl">
+
+        </div>
+        <!-- end form converter -->
+         
+
+    </main>
+    <!-- end main -->
+
+    <script src="/static/assets/js/jquery-3.7.1.min.js"></script>
+    <script src="/static/assets/js/main.js" type="module"></script>
+    <script src="/static/assets/js/length_converter.js" type="module"></script>
+    <script src="/static/assets/js/weight_converter.js" type="module"></script>
+    <script src="/static/assets/js/temperature_converter.js" type="module"></script>
+</body>
+</html>

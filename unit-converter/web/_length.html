@@ -1,0 +1,31 @@
+<form id="form-length" class="grid grid-cols-2 gap-4 justify-items-stretch" method="post" enctype="application/x-www-form-urlencoded">
+    <input class="sm:text-xl border-2 rounded-lg border-primary px-4 py-4" required type="number"
+           placeholder="enter length" name="inputLength">
+    <input class="sm:text-xl border-2 rounded-lg border-primary px-4 py-4" disabled name="to-length" value="-">
+    <!-- from -->
+    <select name="unitFrom" class="sm:text-xl">
+        <option value="mm">millimeter (mm)</option>
+        <option value="cm">centimeter (cm)</option>
+        <option value="m">meter (m)</option>
+        <option value="km">kilometer (km)</option>
+        <option value="inch">inch</option>
+        <option value="foot">foot</option>
+        <option value="yard">yard</option>
+        <option value="mile">mile</option>
+    </select>
+    <!-- to -->
+    <select name="unitTo" class="sm:text-xl">
+        <option value="mm">millimeter (mm)</option>
+        <option value="cm">centimeter (cm)</option>
+        <option value="m">meter (m)</option>
+        <option value="km">kilometer (km)</option>
+        <option value="inch">inch</option>
+        <option value="foot">foot</option>
+        <option value="yard">yard</option>
+        <option value="mile">mile</option>
+    </select>
+    <input id="btn-convert"
+            type="submit"
+           value="convert length"
+            class="text-xl hover:bg-gradient-to-r hover:from-primary hover:to-secondary bg-gradient-to-r from-secondary to-primary p-4 text-on-primary font-bold uppercase rounded-md mt-10">
+</form>

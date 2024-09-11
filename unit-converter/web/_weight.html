@@ -1,0 +1,25 @@
+<form id="form-weight" class="grid grid-cols-2 gap-4 justify-items-stretch" method="post">
+    <input class="sm:text-xl border-2 rounded-lg border-primary px-4 py-4" required type="number"
+           placeholder="enter weight" name="inputWeight">
+    <input class="sm:text-xl border-2 rounded-lg border-primary px-4 py-4" disabled name="to-weight" value="-">
+    <!-- from -->
+    <select name="unitFrom" class="sm:text-xl">
+        <option value="mg">milligram (mg)</option>
+        <option value="g">gram (g)</option>
+        <option value="kg">kilogram (kg)</option>
+        <option value="ounce">ounce</option>
+        <option value="pound">pound</option>
+    </select>
+    <!-- to -->
+    <select name="unitTo" class="sm:text-xl">
+        <option value="mg">milligram (mg)</option>
+        <option value="g">gram (g)</option>
+        <option value="kg">kilogram (kg)</option>
+        <option value="ounce">ounce</option>
+        <option value="pound">pound</option>
+    </select>
+    <button id="btn-convert" type="submit"
+            class="text-xl hover:bg-gradient-to-r hover:from-primary hover:to-secondary bg-gradient-to-r from-secondary to-primary p-4 text-on-primary font-bold uppercase rounded-md mt-10">
+        Convert weight
+    </button>
+</form>
