@@ -1,0 +1,33 @@
+{{define "login"}}
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Admin | Login</title>
+        <link href="/static/css/output.css" rel="stylesheet">
+    </head>
+    <body>
+
+    <main class="min-h-screen flex justify-center items-center">
+        <div class="bg-slate-200 px-8 py-8">
+            {{if .Error}}
+            <p class="mb-4">{{.Error}}</p>
+            {{end}}
+            <form method="post" action="/login">
+                <input type="text" name="username" placeholder="username" required
+                       class="block mb-4 border-2 border-stone-500 px-4 py-2">
+                <input type="text" name="password" placeholder="password" required
+                       class="block border-2 border-stone-500 px-4 py-2">
+                <button type="submit" class="bg-primary w-full py-2 rounded-md text-on-primary font-bold mt-10">Login
+                </button>
+            </form>
+        </div>
+    </main>
+
+
+    </body>
+    </html>
+{{end}}
