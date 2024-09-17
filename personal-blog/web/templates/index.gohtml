@@ -1,0 +1,59 @@
+{{define "home"}}
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Home</title>
+        <link href="/static/css/output.css" rel="stylesheet">
+    </head>
+    <body class="">
+
+    <header class="bg-gradient-to-r from-primary to-secondary">
+        <div class="container mx-auto py-4 flex px-8 text-on-primary">
+            <h1 class="text-5xl font-bold basis-full">Personal Blog</h1>
+            <a href="/login">
+                <button id="btn-logout" class="basis-60 px-4 py-2 mx-2 bg-teal-500 rounded-sm hover:bg-teal-700">
+                    Login
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-8 mt-10">
+        <div class="flex flex-wrap justify-center gap-4">
+            {{if .Articles}}
+                <!--            article 1-->
+                {{range $i, $item := .Articles}}
+                <a href="/article/{{$item.Id}}">
+                    <div class="bg-slate-100 max-w-sm rounded-lg hover:bg-slate-300">
+                        <div class="px-8 py-4 h-40 overflow-hidden">
+                            <h2 class="text-2xl mb-4">{{$item.Title}}</h2>
+                            <p>{{$item.Content}}</p>
+                        </div>
+                        <span class="px-8 mt-10"><b>Tags:</b>
+                    {{range $tag := $item.Tags}}
+                        #{{$tag}}
+                    {{end}}
+                </span><br>
+                        <span class="px-8 mt-10"><b>Category:</b> {{$item.Category}}</span><br>
+                    </div>
+                </a>
+                {{end}}
+            {{else}}
+                <div>
+                    <h1 class="text-3xl font-bold">Article is empty!</h1>
+                </div>
+            {{end}}
+
+
+        </div>
+    </main>
+
+    </body>
+    </html>
+{{end}}
+
+

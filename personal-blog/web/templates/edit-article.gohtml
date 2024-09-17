@@ -1,0 +1,47 @@
+{{define "edit_article"}}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Article</title>
+    <link href="/static/css/output.css" rel="stylesheet">
+<!--        <link href="./../src/css/output.css" rel="stylesheet">-->
+</head>
+<body>
+
+<main class="max-w-3xl mx-auto px-4">
+    <div class="mt-8">
+        <h1 class="text-3xl font-bold">Edit Article</h1>
+        <div class="mt-8">
+            <form id="form-edit-article" method="post" action="/edit/{{.Article.Id}}">
+                <input
+                        name="title"
+                        value="{{.Article.Title}}"
+                        type="text" placeholder="article title" class="block w-full mb-4 text-xl border-b-2 border-slate-300 px-2 py-2 rounded-sm focus:outline-none focus:border-primary">
+                <input
+                        name="category"
+                        value="{{.Article.Category}}"
+                        type="text" placeholder="category" class="mb-4 text-xl w-full sm:w-2/5 border-b-2 border-slate-300 px-2 py-2 rounded-sm focus:outline-none focus:border-primary">
+                <input
+                        name="tags"
+                        value="{{.Tags}}"
+                        type="text" placeholder="tags: java,golang" class="mb-4 text-xl border-2 border-slate-300 px-2 py-2 rounded-sm focus:outline-none focus:border-primary">
+                <textarea
+                        name="content"
+                        class="mt-8 px-4 py-4 border-2 text-xl border-slate-300 w-full h-80 focus:border-primary" placeholder="content">{{.Article.Content}}</textarea>
+                <button type="submit" class="bg-teal-500 text-on-primary px-8 py-2 mt-10 hover:bg-indigo-700 text-xl">Edit</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!--<script src="/static/js/jquery-3.7.1.min.js"></script>-->
+<!--<script src="/static/js/new-article.js"></script>-->
+<!--<script src="./../src/js/jquery-3.7.1.min.js"></script>-->
+<!--<script src="./../src/js/new-article.js"></script>-->
+</body>
+</html>
+{{end}}
