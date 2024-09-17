@@ -14,7 +14,8 @@ The projects are organized by difficulty level, ranging from beginner to interme
   sample solution for the [number guessing game](https://roadmap.sh/projects/number-guessing-game) challenge from [roadmap.sh](https://roadmap.sh/)
 - [Unit Converter](https://github.com/mrizkisaputra/backend-projects/tree/master/unit-converter) - WebApp  
   sample solution for the [unit converter](https://roadmap.sh/projects/unit-converter) from [roadmap.sh](https://roadmap.sh)
-- Personal Blog (coming soon) 🎉
+- [Personal Blog](https://github.com/mrizkisaputra/backend-projects/tree/master/personal-blog) - WebApp  
+  sample solution for the [personal blog](https://roadmap.sh/projects/personal-blog) challenge from [roadmap.sh](https://roadmap.sh/)
 - Blogging Platform API (coming soon) 🎉
 - Todo List API (coming soon) 🎉
 - Weather API (coming soon) 🎉
