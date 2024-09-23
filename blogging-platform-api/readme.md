@@ -15,8 +15,13 @@ Sample solution for [blogging platform API](https://roadmap.sh/projects/blogging
 - Testify (Unit Testing) - [https://github.com/stretchr/testify](https://github.com/stretchr/testify)
 - Golang Migrate (Database Migration) [https://github.com/golang-migrate/migrate](https://github.com/golang-migrate/migrate)
 
-## Architecture Pattern
+## Clean Architecture Pattern
+The project uses Clean Architecture by Robert C. Martin (Uncle Bob).
 
+### Directory Structure
+
+
+### Layer of Clean Architecture
 
 ___
 
