@@ -16,7 +16,8 @@ The projects are organized by difficulty level, ranging from beginner to interme
   sample solution for the [unit converter](https://roadmap.sh/projects/unit-converter) from [roadmap.sh](https://roadmap.sh)
 - [Personal Blog](https://github.com/mrizkisaputra/backend-projects/tree/master/personal-blog) - WebApp  
   sample solution for the [personal blog](https://roadmap.sh/projects/personal-blog) challenge from [roadmap.sh](https://roadmap.sh/)
-- Blogging Platform API (coming soon) 🎉
+- [Blogging Platform API](https://github.com/mrizkisaputra/backend-projects/tree/master/blogging-platform-api) - API  
+  sample solution for the [blogging platform api](https://roadmap.sh/projects/blogging-platform-api) from [roadmap.sh](https://roadmap.sh)
 - Todo List API (coming soon) 🎉
 - Weather API (coming soon) 🎉
 - Expense Tracker API (coming soon) 🎉
