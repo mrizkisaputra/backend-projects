@@ -18,11 +18,11 @@ Sample solution for [blogging platform API](https://roadmap.sh/projects/blogging
 ## Clean Architecture Pattern
 The project uses Clean Architecture by Robert C. Martin (Uncle Bob).
 
-### Directory Structure
-
-
 ### Layer of Clean Architecture
-
+-  models
+-  respository
+-  usecase
+-  delivery
 ___
 
 ## Run Application
@@ -36,4 +36,4 @@ ___
    ```
 
 ## API Documentation
-API Spec is in ``api`` directory
+API Spec is in [api](./api/personal-blogging-platform-api.md) directory

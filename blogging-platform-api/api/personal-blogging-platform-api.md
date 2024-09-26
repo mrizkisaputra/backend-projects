@@ -45,9 +45,9 @@ ___
   {
     "status": 400,
     "errors": {
-      "title": ["REQUIRED", "TO_LONG"],
+      "title": ["REQUIRED", "TO_LONG", "TO_SHORT"],
       "content": ["REQUIRED"],
-      "category": ["TO_LONG", "MUST_BE_ALPHABET"]  
+      "category": ["REQUIRED", "TO_LONG", "ALPHA ONLY", "TO_SHORT"]  
     },
   }
   ```
@@ -59,62 +59,6 @@ ___
     "errors": "Internal server error",
   }
   ```
-
-### Get all blog post: GET ``/api/posts``
-- **Request samples**
-  ```json5
-  ### request header
-  Content-Type: application/json
-  
-  ### request body
-   ```
-- **Response samples**
-  ```json5
-  ### response header
-  Content-Type: application/json
-
-  ### response body
-  {
-    "status": 200,
-    "data": [
-      {
-        "id": 1727071310,
-        "title": "My First Blog Post",
-        "content": "This is the content of my first blog post.",
-        "category": "Technology",
-        "tags": ["Tech", "Programming"],
-        "createdAt": "2021-09-01T12:00:00Z",
-        "updatedAt": "2021-09-01T12:00:00Z"
-      },
-      {
-        "id": 1825061220,
-        "title": "My Second Blog Post",
-        "content": "This is the content of my second blog post.",
-        "category": "Technology",
-        "tags": ["Tech", "Programming"],
-        "createdAt": "2021-09-01T12:30:00Z",
-        "updatedAt": "2021-09-01T12:30:00Z"
-      }
-    ]
-  }
-  ```
-- **Response samples (client error)**
-  ```json5
-  {
-    "status": 404,
-    "errors": "Not found",
-  }
-  ```
-
-- **Response samples (server error)**
-  ```json5
-  {
-    "status": 500,
-    "errors": "Internal server error",
-  }
-  ```
-
-___
 
 ### Get a single blog post: GET ``/api/posts/{id}``
 - **Request samples**  
@@ -243,14 +187,17 @@ If the blog post was successfully deleted return ``204 No Content``
   ```
 ___
 
-### Filter blog posts by a search term: GET ``/api/posts?term={term}&page={page}&limit{limit}``
+### Get all blog posts: GET ``/api/posts``
 - **Request samples**  
   ```json5
   ### Query Param
-  term={title or category}
-  page={integer} default 0
-  limit={integer} default 10
+  title={string} optional
+  category={string} optional
+  page={integer} default 1, optional
+  limit={integer} default 10, optional
   
+  ### request header
+  Content-Type: application/json
   ```
 - **Response samples**  
   ```json5
@@ -263,10 +210,10 @@ ___
       {...}
     ],
     "paging": {
-      "totalData": 4, //Ini menunjukkan total jumlah postingan yang tersedia di database tanpa memperhatikan pagination.
-      "page": 0,
+      "total_data": 4, //Ini menunjukkan total jumlah postingan yang tersedia di database tanpa memperhatikan pagination.
+      "page": 1,
       "limit": 10,
-      "totalPage": 1 // Ini menunjukkan total jumlah halaman yang ada berdasarkan limit dan totalData
+      "total_page": 1 // Ini menunjukkan total jumlah halaman yang ada berdasarkan limit dan totalData
     }
   }
   ```
