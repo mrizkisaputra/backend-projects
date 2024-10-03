@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  db:
+    container_name: mysql-container
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: f6gJhwCjORerfoLHi93OjViarA2sz1
+      MYSQL_USER: todosapi
+      MYSQL_PASSWORD: 4PG5tmTC9CMdWqmMIXZtARNctiBBQr
+      MYSQL_DATABASE: todosapi
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/mysql:/var/lib/mysql
