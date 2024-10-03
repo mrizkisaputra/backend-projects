@@ -33,7 +33,8 @@
     ```json
     {
       "status": 401,
-      "errors": "Unauthorized"
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Unauthorized"
     }
     ```
 
@@ -41,10 +42,20 @@
     ```json
     {
       "status": 400,
-      "errors": {
-        "title": ["REQUIRED", "TO_LONG"],
-        "description": ["REQUIRED", "TO_LONG"]
-      }
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Validation errors",
+      "errors": [
+        {
+          "field": "Title",
+          "rejected_value": string,
+          "message": // "REQUIRED", "TO_LONG"
+        },
+        {
+          "field": "Description",
+          "rejected_value": string,
+          "message": // "REQUIRED", "TO_LONG"
+        },
+      ]
     }
     ```
 
@@ -52,7 +63,8 @@
     ```json
     {
       "status": 500,
-      "errors": "Internal server error"
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Internal server error"
     }
     ```
 
@@ -76,7 +88,7 @@
 -  Response sample
     ```json
     {
-      "status": 201,
+      "status": 200,
       "data": {
            "id": "f8c3de3d-1fea-4d7c-a8b0-29f63c4c3454",
            "id_user":"5096125b-aba3-4c62-bd02-b15c9be8c5f2", 
@@ -93,15 +105,26 @@
     ```json
     {
       "status": 400,
-      "errors": {
-        "title": ["REQUIRED", "TO_LONG"],
-        "description": ["REQUIRED", "TO_LONG"]
-      }
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Validation errors",
+      "errors": [
+        {
+          "field": "Title",
+          "rejected_value": string,
+          "message": // "REQUIRED", "TO_LONG"
+        },
+        {
+          "field": "Description",
+          "rejected_value": string,
+          "message": // "REQUIRED", "TO_LONG"
+        },
+      ]
     }
    
     {
       "status": 400,
-      "errors": "query parameter must be value 'done'"
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "query parameter must be value 'done'"
     }
     ```
 
@@ -109,7 +132,8 @@
     ```json
     {
       "status": 401,
-      "errors": "Unauthorized"
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Unauthorized"
     }
     ```
 
@@ -117,7 +141,8 @@
     ```json
     {
       "status": 403,
-      "errors": "Forbidden"
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Forbidden"
     }
     ```
 
@@ -125,7 +150,8 @@
     ```json
     {
       "status": 500,
-      "errors": "Internal server error"
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Internal server error"
     }
     ```
 
@@ -144,7 +170,8 @@
    ```json
    {
       "status": 401,
-      "errors": "Unauthorized"
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Unauthorized"
    }
    ```
 
@@ -152,7 +179,8 @@
    ```json
    {
       "status": 404,
-      "errors": "Not found"
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Not found"
    }
    ```
 
@@ -160,7 +188,8 @@
     ```json
     {
       "status": 500,
-      "errors": "Internal server error"
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Internal server error"
     }
     ```
 
@@ -169,10 +198,10 @@
 - Request sample  
    ```json
   ### Query Parameter filtering
-  status=string (in-progress or done)
+  status=string (in-progress or done) default in-progress
   
   ### Query Parameter sorting
-  sort=string (created_at)
+  sort=string (created_at) default created_at
   order=string (asc, desc) default asc
   
   ### Query Parameter pagination

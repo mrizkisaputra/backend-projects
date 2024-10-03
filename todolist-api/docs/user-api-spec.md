@@ -43,11 +43,38 @@
     ### BODY
     {
       "status": 400,
-      "errors": {
-          "name": ["REQUIRED", "TO_LONG"],
-          "email": ["REQUIRED", "EMAIL_FORMAT", "TO_LONG", "UNIQUE"],
-          "password": ["REQUIRED", "TO_SHORT"]
-      }
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Validation errors"
+      "errors": [
+          {
+            "field": "name",
+            "rejected_value": string,
+            "message": // "REQUIRED", "TO_LONG"
+          },
+          {
+            "field": "email",
+            "rejected_value": string,
+            "message": // "REQUIRED", "EMAIL_FORMAT", "TO_LONG", "UNIQUE"
+          },
+          {
+            "field": "password",
+            "rejected_value": string,
+            "message": // "REQUIRED", "TO_SHORT"
+          },
+      ]
+    } 
+    ```
+
+- Response sample (client error)
+    ```json
+    ### HEADER
+    Content-Type: application/json
+  
+    ### BODY
+    {
+      "status": 409,
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "email already registered"
     } 
     ```
 
@@ -59,7 +86,8 @@
     ### BODY
     {
       "status": 500,
-      "errors": "server internal error" 
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Internal server error" 
     }
     ```
 
@@ -92,10 +120,20 @@
     ### BODY
     {
       "status": 400,
-      "errors": {
-          "email": ["REQUIRED", "EMAIL_FORMAT", "TO_LONG"],
-          "password": ["REQUIRED", "TO_SHORT"]
-      }
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Validation errors",
+      "errors": [
+        {
+          "field": "email",
+          "rejected_value": string,
+          "message": // "REQUIRED", "EMAIL_FORMAT", "TO_LONG", "UNIQUE"
+        },
+        {
+          "field": "password",
+          "rejected_value": string,
+          "message": // "REQUIRED", "TO_SHORT"
+        },
+      ]
     } 
     ```
 
@@ -107,6 +145,7 @@
     ### BODY
     {
       "status": 500,
-      "errors": "server internal error" 
+      "timestamp": "22-07-2022 06:49:25",
+      "message": "Internal server error" 
     }
     ```

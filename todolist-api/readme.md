@@ -26,11 +26,20 @@ Sample solution for challenge [todolist api](https://roadmap.sh/projects/todo-li
 The project uses Clean Architecture by Robert C. Martin (Uncle Bob).
 ### Layer of Clean Architecture
 -  models
--  respository
+-  repository
 -  usecase
 -  delivery
 
 ## API Documentation
 API spec is in [docs](./docs) directory
 
-## Run Application
+## Run Application with docker
+1. Download ZIP file or use git clone https://github.com/mrizkisaputra/backend-projects.git
+2. Open terminal, navigate to directory project ``todolist-api``
+```
+### step 1
+docker compose up -d
+
+### step 2
+go run ./cmd/main.go
+```
