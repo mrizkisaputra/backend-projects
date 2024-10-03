@@ -9,7 +9,6 @@ The projects are organized by difficulty level, ranging from beginner to interme
   sample solution for the [github user activity](https://roadmap.sh/projects/github-user-activity) challenge from [roadmap.sh](https://roadmap.sh/)
 - [Expense Tracker](https://github.com/mrizkisaputra/backend-projects/tree/master/expense-tracker) - CLI  
   sample solution for the [expense tracker](https://roadmap.sh/projects/expense-tracker) challenge from [roadmap.sh](https://roadmap.sh/)
-  
 - [Number Guessing Game](https://github.com/mrizkisaputra/backend-projects/tree/master/number-guessing-game) - CLI  
   sample solution for the [number guessing game](https://roadmap.sh/projects/number-guessing-game) challenge from [roadmap.sh](https://roadmap.sh/)
 - [Unit Converter](https://github.com/mrizkisaputra/backend-projects/tree/master/unit-converter) - WebApp  
@@ -18,7 +17,8 @@ The projects are organized by difficulty level, ranging from beginner to interme
   sample solution for the [personal blog](https://roadmap.sh/projects/personal-blog) challenge from [roadmap.sh](https://roadmap.sh/)
 - [Blogging Platform API](https://github.com/mrizkisaputra/backend-projects/tree/master/blogging-platform-api) - API  
   sample solution for the [blogging platform api](https://roadmap.sh/projects/blogging-platform-api) from [roadmap.sh](https://roadmap.sh)
-- Todo List API (coming soon) 🎉
+- [Todo List API](https://github.com/mrizkisaputra/backend-projects/tree/master/todolist-api) - API  
+  sample solution for the [todolist api](https://roadmap.sh/projects/todo-list-api) from [roadmap.sh](https://roadmap.sh)
 - Weather API (coming soon) 🎉
 - Expense Tracker API (coming soon) 🎉
 
