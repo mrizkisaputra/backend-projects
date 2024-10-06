@@ -19,7 +19,8 @@ The projects are organized by difficulty level, ranging from beginner to interme
   sample solution for the [blogging platform api](https://roadmap.sh/projects/blogging-platform-api) from [roadmap.sh](https://roadmap.sh)
 - [Todo List API](https://github.com/mrizkisaputra/backend-projects/tree/master/todolist-api) - API  
   sample solution for the [todolist api](https://roadmap.sh/projects/todo-list-api) from [roadmap.sh](https://roadmap.sh)
-- Weather API (coming soon) 🎉
+- [Weather API](https://github.com/mrizkisaputra/weather-api) - API  
+  sample solution for the [weather api](https://roadmap.sh/projects/weather-api-wrapper-service) from [roadmap.sh](https://roadmap.sh)
 - Expense Tracker API (coming soon) 🎉
 
 
